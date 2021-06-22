@@ -45,10 +45,8 @@ def funcao_geral_integracao(a, b, epson, tipo):
         resultadoAnterior = resultado
         resultado = integral
         erro = abs(resultadoAnterior - resultado)
-        print(resultado, resultadoAnterior, erro)
         
         if (erro < epson): 
-            print('a')
             break
     
     return interacoes, resultado
