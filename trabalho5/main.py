@@ -2,4 +2,4 @@ import gauss_Legendre
 
 teste = gauss_Legendre.gauss_Legendre_2pontos()
 
-print(teste)
+print("interacoes: ", teste[0],"Resultado", teste[1])
