@@ -17,9 +17,25 @@ def gauss_Legendre_2pontos(a_inicio, b_fim, erro_estimado): #Solução de Gauss-
     raizes_s = [s, -s]
     w = 1
     pesos_w = [w, w]
-    # return teste(pesos_w, raizes_s)
 
     return funcao_geral_integracao(2, pesos_w, raizes_s, erro_estimado, a_inicio, b_fim)
+
+def gauss_Legendre_3pontos(a_inicio, b_fim, erro_estimado): #Solução de Gauss-Legendre com 3 pontos.
+    s = math.sqrt(3/5)
+    raizes_s = [s, 0, -s]
+    w = 5/9
+    w_2 = 8/9
+    pesos_w = [w, w_2, w]
+
+    return funcao_geral_integracao(3, pesos_w, raizes_s, erro_estimado, a_inicio, b_fim)
+
+def gauss_Legendre_4pontos(a_inicio, b_fim, erro_estimado): #Solução de Gauss-Legendre com 4 pontos.
+    raizes_s = [0.861136, -0.861136, 0.339981, -0.339981]
+    w = 0.34785
+    w_3 = 0.65214 
+    pesos_w = [w, w, w_3, w_3]
+
+    return funcao_geral_integracao(4, pesos_w, raizes_s, erro_estimado, a_inicio, b_fim)
 
 
 def funcao_geral_integracao(qtd_pontosInterpolacao, pesos_w, raizes_s, epson, a, b):
@@ -46,23 +62,18 @@ def funcao_geral_integracao(qtd_pontosInterpolacao, pesos_w, raizes_s, epson, a,
             somatorio = 0
             for k in range(qtd_pontosInterpolacao):
                 somatorio += (pesos_w[k] * f(x(raizes_s[k], xi, xf))) #aqui fazemos o somatorio do próprio método de gauss com a quantidade de pontos especifico
+           
             resultado  += ((xf - xi) / 2) * somatorio # interamos o resultado
+           
             interacoes += 1
           
         N = N*2
         resultadoAnterior = resultado_aux
-        print("CADA RESULTADO", resultado, resultadoAnterior)
+      
         erro = abs((resultadoAnterior - resultado)/2)
-        print("ERRO", erro, interacoes)
-        print("============================================")
+     
         if (erro < epson): 
             break
-    print("FIM", resultado, interacoes)
+    
     return interacoes, resultado
 
-def teste(pesos_w, raizes_s):
-    somatorio = 0
-    for k in range(2):
-        somatorio += (pesos_w[k] * f(x(raizes_s[k], 0, 1)))
-        resultado  = ((1 - 0) / 2) * somatorio
-        print("somatoriooo", resultado)
