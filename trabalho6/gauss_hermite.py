@@ -30,7 +30,7 @@ def gauss_Hermite_3pontos(): #Solução de Gauss-Hermite com 3 pontos.
     w_2 = 1.1816359
   
     pesos_w = [w, w_2, w]
-    print("OS PESOS", pesos_w)
+  
    
     return funcao_geral_integracao(3, pesos_w, raizes_s)
 
@@ -51,9 +51,3 @@ def funcao_geral_integracao(qtd_grau, pesos_w, raizes_s):
         somatorio += (pesos_w[k] * f(raizes_s[k]))
   
     return somatorio
-
-
-teste = gauss_Hermite_2pontos()
-teste2 = gauss_Hermite_3pontos()
-teste3 = gauss_Hermite_4pontos()
-print(teste, teste2, teste3)

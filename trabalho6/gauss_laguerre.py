@@ -39,8 +39,3 @@ def funcao_geral_integracao(qtd_grau, pesos_w, raizes_s):
     for k in range(qtd_grau):
         somatorio += (pesos_w[k] * f(raizes_s[k]))
     return somatorio
-
-teste = gauss_Laguerre_2pontos()
-teste2 = gauss_Laguerre_3pontos()
-teste3 = gauss_Laguerre_4pontos()
-print(teste, teste2, teste3)

@@ -10,7 +10,7 @@ def f(x): #função para ser utilizada nos métodos
 
 def gauss_Chebyshev_2pontos(): #Solução de Gauss-Chebyshev com 2 pontos.
     s = math.sqrt(2)
-    raizes_s = [-1/s, 1/s]
+    raizes_s = [-1/s, s]
     w = math.pi/2
     pesos_w = [w, w]
 
@@ -39,10 +39,5 @@ def funcao_geral_integracao(qtd_grau, pesos_w, raizes_s):
     somatorio = 0
     for k in range(qtd_grau):
         somatorio += (pesos_w[k] * f(raizes_s[k]))
-        print(qtd_grau, k ,  somatorio)
-  
+
     return somatorio
-teste = gauss_Chebyshev_2pontos()
-teste2 = gauss_Chebyshev_3pontos()
-teste3 = gauss_Chebyshev_4pontos()
-print(teste, teste2, teste3)
