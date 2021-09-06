@@ -2,6 +2,7 @@ import potencia_regular
 import numpy as np
 
 
+#metodo da potencia inversa nada mais é do que o metodo da potencia regular aplicada em cima da matriz inversa
 def Potencia_inversa(matriz, vetor, epson):
     a1_inversa = np.linalg.inv(matriz) 
     lambda1_a1, x_dominante = potencia_regular.Potencia_Regular(a1_inversa, vetor, epson) #vai devolver o autovalor dominante da matriz inversa (lambda)

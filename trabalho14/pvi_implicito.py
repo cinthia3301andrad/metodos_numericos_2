@@ -1,8 +1,8 @@
 class metodo_runge_kutta:
     
     def __init__(self, delta_t):
-        self.v0 = 5.0 
-        self.y0 = 200.0 
+        self.v0 = 5.0 #velocidade da particula no tempo 0
+        self.y0 = 200.0 #posição da particula no tempo 0
         self.k = 0.25 
         self.m = 2 
         self.g = 10
@@ -18,7 +18,7 @@ class metodo_runge_kutta:
         while(y_atual > 0): 
             v_atual, y_atual = self.sol_aproximada(v_ant, y_ant)
             tempo = tempo + self.delta_t
-
+#verificações para ver se é o maximo ou nao
             if(v_atual*v_ant < 0): 
                 if(y_ant > y_atual):
                     y_alt_max = y_ant 
@@ -78,7 +78,7 @@ class metodo_runge_kutta:
         result = [0] * 2 
 
  
-        result[0] = v_ant + self.delta_t*((auxiliar1[0] + 4*auxiliar2[0] + auxiliar3[0])/6)
+        result[0] = v_ant + self.delta_t*((auxiliar1[0] + 4*auxiliar2[0] + auxiliar3[0])/6)#atualização melhorada do estado Si+1 tangentes, formula de simpson 1/3
         result[1] = y_ant + self.delta_t*((auxiliar1[1] + 4*auxiliar2[1] + auxiliar3[1])/6)
 
         return result[0], result[1] 

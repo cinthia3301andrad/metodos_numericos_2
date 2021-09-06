@@ -45,8 +45,10 @@ class metodo_df_pvc2:
 
         matrix_B = np.empty((tam), dtype=float)
         matrix_B.fill(self.fxy)
+        print("A aplicação da máscara sobre os nós das incógnitas gera as seguintes equações:", matrix_A)
         
 
         matrix_A_inv = np.linalg.inv(matrix_A)
-        result = np.dot(matrix_A_inv, matrix_B)
+        result = np.dot(matrix_A_inv, matrix_B)#Produto escalar de duas matrizes. Especificamente,
+      
         return result

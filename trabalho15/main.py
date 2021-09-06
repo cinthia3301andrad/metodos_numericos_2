@@ -7,7 +7,7 @@ def main():
     print("--------------------------------------------------------------------------------------------------")
 
     for i in range(1, 5):
-        sol = metodo_preditor_corretor(10**(-i))
+        sol = metodo_preditor_corretor(10**(-i))#essa entrada é meu h que é meus espaços, delta_t
         y_alt_max, t_alt_max, v_mar, t_mar = sol.pontos_criticos()
         print(10**(-i), '             ' ,y_alt_max, '             ', t_alt_max,  '             ',v_mar, t_mar, '             ')
         print("--------------------------------------------------------------------------------------------------")

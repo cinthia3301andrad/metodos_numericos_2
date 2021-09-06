@@ -10,7 +10,7 @@ def main():
     print("--------------------------------------------------------------------------------------------------")
 
     for i in range(1, 5):
-        solucao = metodo_runge_kutta(10**(-i))
+        solucao = metodo_runge_kutta(10**(-i))#estado no tempo i
         y_alt_max, t_alt_max, v_mar, t_mar = solucao.pontos_criticos()
         print(10**(-i),"         ", y_alt_max  , "         ",t_alt_max, "         ",v_mar, "         ", t_mar)
   

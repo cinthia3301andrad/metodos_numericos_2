@@ -5,7 +5,7 @@ def integral_problema_1(x):
     return 1/(math.pow(x, 2) ** (1/3))
 
 
-def function_soluction_1(f, a_origin, b_origin):
+def function_soluction_1(f, a_origin, b_origin):#aqui ja retona a função vezes a derivada
     x_s = lambda s: ((a_origin+b_origin)/2)+(((b_origin-a_origin)/2)*math.tanh(s)) 
     dx_s = lambda s: (((b_origin-a_origin) / 2) * (1/(math.pow(math.cosh(s), 2))))
     return lambda s: f(x_s(s))*dx_s(s)
